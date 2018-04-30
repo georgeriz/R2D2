@@ -3,4 +3,7 @@ import spacy
 
 nlp = spacy.load('en')
 
-print foo()
+doc = nlp(unicode(foo()))
+
+for token in doc:
+    print token.pos_
