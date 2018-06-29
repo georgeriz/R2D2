@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect
+import json
 
 app = Flask(__name__)
 
@@ -10,6 +11,10 @@ def hello_world():
 @app.route('/my_input')
 def my_input():
     return redirect("/")
+	
+@app.route('/api')
+def get_results():
+	return json.dumps({"name":"jack", "city":"los angeles"})
 	
 if __name__ == "__main__":
 	app.run(debug=True)
